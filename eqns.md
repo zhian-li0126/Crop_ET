@@ -1,0 +1,23 @@
+| Physics          | Governing Equation                                                                                                                                                              | Variable                   | Initial Condition             | Boundary Condition                                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | ----------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Momentum balance | $$\rho\left(\frac{\partial \mathbf{u}}{\partial t}+\mathbf{u}\cdot\nabla\mathbf{u}\right)=-\nabla p+\mu\nabla^2\mathbf{u}+\rho\mathbf{g}$$ <br><br> $$\nabla\cdot\mathbf{u}=0$$ | Air velocity $(\mathbf{u})$ <br>Pressure ($p$) | $$\mathbf{u}(x,y,z,0)=0$$ $$p(x,y,z,0)=p_{\text{atm}}$$   | **Inlet:** $$\mathbf{u}=\mathbf{u}_{in}$$ <br><br> **Walls, LED, lettuce surface (No-slip Condition):** $$\mathbf{u}=0$$ **Outlet:** $$p=p_{out}= 0 \text{Pa}$$ |
+
+<br>
+<br>
+
+
+| Physics        | Governing Equation                                                                                      | Variable                                 | Initial Condition                                                              | Boundary Condition                                                                                                                                                                                                      |
+| -------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Energy balance | $$\rho C_p\left(\frac{\partial T}{\partial t}+\mathbf{u}\cdot\nabla T\right)=\nabla\cdot(k\nabla T)+Q$$ | Air temperature, (T)                     | $$T(x,y,z,0)=T_0$$ <br><br> | **Inlet:** $$T=T_{in}$$ <br><br> **Outlet:** $$-\mathbf{n}\cdot(k\nabla T)=0$$ <br><br> **Chamber walls:** $$-\mathbf{n}\cdot(k\nabla T)=0$$ <br><br> or: $$-\mathbf{n}\cdot(k\nabla T)=h_{\text{wall}}(T-T_{\infty})$$ |
+| Energy balance | $$\rho C_p\left(\frac{\partial T}{\partial t}+\mathbf{u}\cdot\nabla T\right)=\nabla\cdot(k\nabla T)+Q$$ | LED heat source, (Q) or $(q_{\text{LED}})$ | $$Q(x,y,z,0)=Q_{\text{LED}}$$                                                  | **LED surface:** $$-\mathbf{n}\cdot(k\nabla T)=q_{\text{LED}}$$ <br><br> $$q_{\text{LED}}=\frac{\eta_hP_{\text{LED}}}{A_{\text{LED}}}$$                                                                                 |
+
+
+
+
+<br>
+<br>
+
+| Physics      | Governing Equation                                                                           | Variable                         | Initial Condition                                                                                | Boundary Condition                                                                                                                                                                                                                                 |
+| ------------ | -------------------------------------------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mass balance | $$\frac{\partial c_v}{\partial t}+\mathbf{u}\cdot\nabla c_v=\nabla\cdot(D_v\nabla c_v)+S_v$$ | Water vapor concentration, (c_v) | $$c_v(x,y,z,0)=c_{v,0}$$ <br><br>  | **Inlet:** $$c_v=c_{v,in}$$ <br><br> **Outlet:** $$-\mathbf{n}\cdot\nabla c_v=0$$ <br><br> **Walls and LED:** $$-\mathbf{n}\cdot(D_v\nabla c_v)=0$$ |
+| |  | Relative humidity, (RH)          | $$RH(x,y,z,0)=RH_0$$ <br><br> Example: $$RH_0=50\%$$                                              | **Inlet:** $$RH=RH_{in}$$ <br><br> **Lettuce surface:** water vapor added by transpiration                                                                                                                                                         |
